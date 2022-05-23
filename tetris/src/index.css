@@ -85,14 +85,15 @@ code {
 
 /* Grid Square */
 .grid-square {
-  border-style: solid;
+  /* border-style: solid; */
   width: var(--tile-size);
   height: var(--tile-size);
-  border-width: var(--border-width);
+  border-radius: 4px;
+  /* border-width: var(--border-width);
   border-left-color: var(--border-left-color);
   border-top-color: var(--border-top-color);
   border-right-color: var(--border-right-color);
-  border-bottom-color: var(--border-bottom-color);
+  border-bottom-color: var(--border-bottom-color); */
 }
 
 * {
@@ -105,6 +106,7 @@ code {
   grid-gap: 0;
   align-self: flex-start;
   grid-area: c; /* Assign to grid area c */
+  grid-gap: 1px;
 }
 
 /* Next Block */
@@ -113,22 +115,27 @@ code {
   grid-template-columns: repeat(4, var(--tile-size));
   align-self: flex-start;
   grid-area: l; /* Grid area l left column */
+  grid-gap: 1px;
 }
 
 /* Score Board */
 .score-board-button {
   display: block;
   padding: 1em;
-  border-width: 5px;
-  border-top-color: var(--button-color-t);
+  background-color: var(--color-0);
+  border: none;
+  /* border-width: 5px; */
+  /* border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
-  border-bottom-color: var(--button-color-b);
+  border-bottom-color: var(--button-color-b); */
 }
 
 /* score-board */
 .score-board {
   grid-area: r;
+  display: flex;
+  flex-direction: column;
 }
 
 /* App */
@@ -168,16 +175,15 @@ and 'b'. The '.' represents an empty cell on the grid. */
 
 /* Control Button */
 .control-button {
-  --size: calc(var(--tile-size) * 2.5);
-  width: var(--size);
-  height: var(--size);
-  text-align: center;
   display: block;
-  border-width: 5px;
-  border-top-color: var(--button-color-t);
+  padding: 1em;
+  background-color: var(--color-0);
+  border: none;
+  /* border-width: 5px; */
+  /* border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
-  border-bottom-color: var(--button-color-b);
+  border-bottom-color: var(--button-color-b); */
 }
 
 /* Message Popup Styles */
