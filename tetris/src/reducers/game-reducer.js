@@ -1,7 +1,8 @@
 import {
     MOVE_RIGHT, MOVE_LEFT, MOVE_DOWN, ROTATE,
-    PAUSE, RESUME, RESTART, GAME_OVER
+    PAUSE, RESUME, RESTART, GAME_OVER, HOLD
   } from '../actions'
+import HoldBlock from '../components/HoldBlock'
   
   import {
     defaultState,
@@ -71,7 +72,6 @@ import {
         newState.score = score
         newState.isRunning = isRunning
       
-        // TODO: Check and Set level
         // Score increases decrease interval
         newState.score = score + checkRows(newGrid)
       
@@ -92,6 +92,22 @@ import {
       case RESTART:
   
         return defaultState()
+
+      case HOLD:
+        if (HoldBlock.hasShape){
+          state.shape = HoldBlock.shape
+          HoldBlock.shape = state.nextShape
+        }
+        else{
+          HoldBlock.shape = state.shape
+          HoldBlock.hasShape = true;
+        }
+        newState = defaultState()
+        newState.grid = newGrid
+        newState.shape = nextShape
+        newState.score = score
+        newState.isRunning = isRunning
+      return state;
   
       default:
         return state

@@ -118,6 +118,14 @@ code {
   grid-gap: 1px;
 }
 
+.hold-block {
+  display: grid;
+  grid-template-columns: repeat(4, var(--tile-size));
+  align-self: flex-start;
+  grid-area: x; /* Grid area l left column */
+  grid-gap: 1px;
+}
+
 /* Score Board */
 .score-board-button {
   display: block;
@@ -158,7 +166,7 @@ code {
 and 'b'. The '.' represents an empty cell on the grid. */
   grid-template-areas: "h h h"
                        "l c r"
-                       ". b .";
+                       "x b .";
 }
 
 /* App-header */

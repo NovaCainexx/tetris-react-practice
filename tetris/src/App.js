@@ -10,6 +10,8 @@ import GridBoard from './components/GridBoard';
 import NextBlock from './components/NextBlock';
 import ScoreBoard from './components/ScoreBoard';
 import MessagePopup from './components/MessagePopup';
+import KeyPressElement from './components/KeyBoardControls';
+import HoldBlock from './components/HoldBlock';
 
 const store = createStore(reducers)
 
@@ -25,6 +27,8 @@ function App() {
         <ScoreBoard />
         <Controls />
         <MessagePopup />
+        <KeyPressElement />
+        <HoldBlock />
       </div>
     </Provider>
   );
